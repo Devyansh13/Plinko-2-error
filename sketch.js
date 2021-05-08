@@ -130,30 +130,41 @@ for(var l=0;l<plinkos.length;l++){
 // 	particles[p].display();
 // }
 
-if(particle!==null){
+if(particle!=null){
 	particle.display();
-	console.log(particle)
-	if(particle.body.position.y>540){
+	// console.log(particle)
+	if(particle.body.position.y>625){
 
-		if(particle.body.position.x<240){
+		if(particle.body.position.x>90 && particle.body.position.x<24){
 			score=score+500;
 			particle=null;
 			if(turn>=5) gameState="end";
 		}
+		// if(particle.body.position.x<240){
+		// 	score=score+500;
+		// 	particle=null;
+		// 	if(turn>=5) gameState="end";
+		// }
+		// if(particle.body.position.x<240){
+		// 	score=score+500;
+		// 	particle=null;
+		// 	if(turn>=5) gameState="end";
+		// }
 	}
 }
   
+console.log(mouseX,mouseY)
 
   drawSprites();
  
 }
 
-function mousePressed(){
-	// if(keyCode==32){
+function keyPressed(){
+	if(keyCode==32){
 	if(gameState!=="end"){
 		turn++;
 		particle=new Particle(mouseX,10,10)
-	// }
+	}
 	}	
 }
 
